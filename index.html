@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consumed — Rock & Metal</title>
+  <meta name="description" content="Meet Consumed, a young, up-and-coming rock and metal band.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23121212'/%3E%3Ctext x='7' y='25' font-family='Arial' font-weight='900' font-size='26' fill='%23C62828'%3EC%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --black: #121212;
+      --grey: #242424;
+      --white: #F2EDE4;
+      --red: #C62828;
+      --silver: #A8A8A8;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 3px solid var(--white);
+      outline-offset: 6px;
+    }
+
+    .wrap {
+      max-width: 1240px;
+      margin: auto;
+      padding: 0 6%;
+    }
+
+    header {
+      border-bottom: 1px solid #ffffff25;
+      background: var(--black);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    header .wrap {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      text-decoration: none;
+    }
+
+    .brand span { color: var(--red); }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 14px;
+      text-decoration: none;
+      color: var(--silver);
+    }
+
+    nav a:hover { color: var(--white); }
+
+    .hero {
+      min-height: calc(100svh - 80px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid #ffffff25;
+      background: radial-gradient(
+        ellipse at 90% 50%, #C6282822, transparent 65%
+      );
+    }
+
+    .hero .wrap {
+      width: 100%;
+      padding-top: 80px;
+      padding-bottom: 65px;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: var(--silver);
+      margin: 0 0 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 3px;
+      background: var(--red);
+      vertical-align: middle;
+      margin-right: 14px;
+    }
+
+    h1 {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-size: clamp(58px, 13vw, 162px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.025em;
+      margin: 0 0 25px;
+      transform: skew(-4deg);
+      transform-origin: left;
+    }
+
+    h1 span { color: var(--red); }
+
+    .intro {
+      max-width: 470px;
+      color: var(--silver);
+      font-size: 20px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 25px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--red);
+      color: var(--white);
+      border: 1px solid var(--red);
+    }
+
+    .button:hover { background: #a82020; }
+
+    .button.secondary {
+      background: transparent;
+      border-color: #ffffff45;
+    }
+
+    .button.secondary:hover { background: var(--grey); }
+
+    .hero-bottom {
+      margin-top: 64px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--silver);
+    }
+
+    .strip {
+      background: var(--red);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 100px 0;
+      border-bottom: 1px solid #ffffff25;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: .01em;
+      margin: 0;
+    }
+
+    .number {
+      color: var(--red);
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin: 0 0 15px;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .story p {
+      color: var(--silver);
+      margin-top: 0;
+    }
+
+    .story .lead {
+      font-size: 24px;
+      color: var(--white);
+      line-height: 1.5;
+    }
+
+    .founders {
+      border-left: 3px solid var(--red);
+      padding-left: 22px;
+      margin-top: 26px;
+      font-size: 14px;
+      color: var(--silver);
+    }
+
+    .members { background: #191919; }
+
+    .member {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+      padding: 26px 0;
+      border-top: 1px solid #ffffff25;
+    }
+
+    .member:last-child {
+      border-bottom: 1px solid #ffffff25;
+    }
+
+    .member h3 {
+      font-size: 25px;
+      margin: 0;
+      letter-spacing: -.5px;
+    }
+
+    .member p {
+      margin: 0;
+      color: var(--silver);
+      font-size: 16px;
+    }
+
+    .role-small {
+      display: block;
+      font-size: 14px;
+      color: var(--silver);
+    }
+
+    .updates {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .update {
+      background: var(--grey);
+      padding: 38px;
+      border-top: 3px solid var(--red);
+    }
+
+    .update h3 {
+      font-family: Impact, sans-serif;
+      font-size: 35px;
+      text-transform: uppercase;
+      margin: 18px 0 12px;
+      line-height: 1.2;
+    }
+
+    .update p {
+      color: var(--silver);
+      margin-bottom: 0;
+    }
+
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--silver);
+    }
+
+    footer { padding: 38px 0; }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    footer p {
+      color: var(--silver);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    footer .wrap > a:last-child {
+      font-size: 14px;
+      color: var(--silver);
+    }
+
+    @media (max-width: 650px) {
+      header .wrap {
+        height: auto;
+        min-height: 80px;
+        flex-wrap: wrap;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        gap: 12px;
+      }
+
+      nav { gap: 20px; width: 100%; }
+
+      .hero { min-height: 610px; }
+
+      .hero .wrap {
+        padding-top: 60px;
+        padding-bottom: 50px;
+      }
+
+      .intro { font-size: 18px; }
+
+      .hero-bottom {
+        letter-spacing: 1px;
+        flex-wrap: wrap;
+        margin-top: 48px;
+      }
+
+      .section { padding: 65px 0; }
+
+      .story { grid-template-columns: 1fr; gap: 25px; }
+
+      .story .lead { font-size: 21px; }
+
+      .member { grid-template-columns: 1fr; gap: 14px; }
+
+      .member p { grid-column: 1; }
+
+      .member h3 { font-size: 23px; }
+
+      .updates { grid-template-columns: 1fr; }
+
+      .update { padding: 28px; }
+
+      .strip {
+        gap: 15px;
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+
+      footer .wrap {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Consumed home">
+        CONSUMED<span>.</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">Our story</a>
+        <a href="#band">The band</a>
+        <a href="#music">Music &amp; gigs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div class="wrap">
+        <p class="eyebrow">Rock / Metal · Est. 2025–2026</p>
+        <h1 id="title">CONSUMED<span>.</span></h1>
+
+        <p class="intro">
+          Five young artists. A shared love of rock and metal.
+          This is just the beginning.
+        </p>
+
+        <div class="actions">
+          <a class="button" href="#band">Meet the band</a>
+          <a class="button secondary" href="#music">Music &amp; gigs</a>
+        </div>
+
+        <div class="hero-bottom">
+          <span>Turn it up. Stay a while.</span>
+          <span>Independent · Up and coming</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip" aria-hidden="true">
+      <span>Guitar</span><span>/</span>
+      <span>Bass</span><span>/</span>
+      <span>Drums</span><span>/</span>
+      <span>Voice</span>
+    </div>
+
+    <section class="section" id="about">
+      <div class="wrap story">
+        <div>
+          <p class="number">01 / OUR STORY</p>
+          <h2>A new band.<br>A loud beginning.</h2>
+        </div>
+
+        <div>
+          <p class="lead">
+            Consumed began with Eric, Annie, and Nathan —
+            and a shared drive to make music together.
+          </p>
+
+          <p>
+            Founded in 2025–2026, the band brings together five young,
+            up-and-coming artists finding their voice in rock and metal.
+            With guitars, bass, drums, and shared vocals, they are
+            building something of their own.
+          </p>
+
+          <div class="founders">
+            Founded by Eric Gower, Annie Surtees &amp; Nathan Morgan.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section members" id="band">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="number">02 / THE LINE-UP</p>
+            <h2>Meet Consumed.</h2>
+          </div>
+          <span class="label">Five artists. One band.</span>
+        </div>
+
+        <div class="member">
+          <h3>Eric Gower</h3>
+          <p>
+            Guitar
+            <span class="role-small">
+              Occasional lead vocals · Founding member
+            </span>
+          </p>
+        </div>
+
+        <div class="member">
+          <h3>Nathan Morgan</h3>
+          <p>
+            Drums
+            <span class="role-small">Founding member</span>
+          </p>
+        </div>
+
+        <div class="member">
+          <h3>Annie Surtees</h3>
+          <p>
+            Bass
+            <span class="role-small">
+              Occasional vocals · Founding member
+            </span>
+          </p>
+        </div>
+
+        <div class="member">
+          <h3>Freya</h3>
+          <p>Rhythm guitar</p>
+        </div>
+
+        <div class="member">
+          <h3>Blosson</h3>
+          <p>Backing vocals</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="music">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="number">03 / WHAT'S NEXT</p>
+            <h2>Watch this space.</h2>
+          </div>
+        </div>
+
+        <div class="updates">
+          <article class="update">
+            <span class="label">Music / Coming soon</span>
+            <h3>The next chapter<br>starts here.</h3>
+            <p>
+              Recordings will appear here when they are ready.
+              Get to know the people behind the sound in the meantime.
+            </p>
+          </article>
+
+          <article class="update">
+            <span class="label">Live / Dates to be announced</span>
+            <h3>See you<br>at the front.</h3>
+            <p>
+              No gigs announced yet. Check back for upcoming shows
+              and details on where to catch Consumed live.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="#top">CONSUMED<span>.</span></a>
+      <p>Upcoming band based in Essex.</p>
+
+      <a
+        href="https://www.instagram.com/consumed25/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Consumed on Instagram (opens in a new tab)"
+      >
+        Instagram · @consumed25
+      </a>
+
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
