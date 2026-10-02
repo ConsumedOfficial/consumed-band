@@ -1,1 +1,1 @@
-# consumed-band
+# bandinfo
