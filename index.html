@@ -6,6 +6,11 @@
 
 <title>Consumed — Rock & Metal</title>
 
+<meta
+  name="description"
+  content="Consumed — an up-and-coming rock and metal band from Essex."
+>
+
 <style>
 
 :root {
@@ -34,14 +39,19 @@ body {
   line-height: 1.6;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10,10,10,.95);
+
+  background: rgba(10,10,10,.96);
+
   border-bottom: 1px solid #ffffff20;
+
   backdrop-filter: blur(10px);
 }
 
@@ -49,17 +59,23 @@ header {
   max-width: 1200px;
   width: 90%;
   margin: auto;
-  min-height: 75px;
+
+  min-height: 78px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  gap: 25px;
 }
 
 .logo {
   color: white;
+
   text-decoration: none;
+
   font-size: 25px;
+
   font-weight: 900;
 }
 
@@ -67,32 +83,93 @@ header {
   color: var(--red);
 }
 
+
+/* NAVIGATION */
+
 nav {
   display: flex;
-  gap: 25px;
+  align-items: center;
+
+  gap: 24px;
 }
 
 nav a {
   color: var(--silver);
+
   text-decoration: none;
-  font-size: 13px;
+
+  font-size: 12px;
+
   text-transform: uppercase;
+
   letter-spacing: 1px;
+
+  transition: .25s;
 }
 
 nav a:hover {
   color: white;
 }
 
-/* HERO */
+
+/* SOCIAL LINKS */
+
+.socials {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.social {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid #ffffff35;
+
+  border-radius: 50%;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  transition: .25s;
+}
+
+.social:hover {
+  background: var(--red);
+
+  border-color: var(--red);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(198,40,40,.35);
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
-  min-height: calc(100vh - 75px);
+  min-height: calc(100vh - 78px);
 
   display: flex;
+
   align-items: center;
 
   position: relative;
+
   overflow: hidden;
 
   background:
@@ -120,17 +197,21 @@ nav a:hover {
   opacity: .12;
 
   right: -200px;
+
   top: 20%;
 }
 
 .hero-inner {
   max-width: 1200px;
+
   width: 90%;
+
   margin: auto;
 
   padding: 100px 0;
 
   position: relative;
+
   z-index: 2;
 }
 
@@ -138,6 +219,7 @@ nav a:hover {
   color: var(--silver);
 
   text-transform: uppercase;
+
   letter-spacing: 4px;
 
   font-size: 13px;
@@ -151,6 +233,7 @@ nav a:hover {
   display: inline-block;
 
   width: 30px;
+
   height: 3px;
 
   background: var(--red);
@@ -236,7 +319,10 @@ h1 span {
   border-color: #ffffff40;
 }
 
-/* STRIP */
+
+/* =========================
+   RED STRIP
+========================= */
 
 .strip {
   background: var(--red);
@@ -260,7 +346,10 @@ h1 span {
   margin: 0 15px;
 }
 
-/* SECTIONS */
+
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
   padding: 100px 0;
@@ -302,7 +391,10 @@ h2 {
   margin: 0;
 }
 
-/* STORY */
+
+/* =========================
+   STORY
+========================= */
 
 .story {
   display: grid;
@@ -334,7 +426,10 @@ h2 {
   background: #ffffff05;
 }
 
-/* BAND */
+
+/* =========================
+   BAND
+========================= */
 
 .members {
   background: #111;
@@ -361,11 +456,12 @@ h2 {
 
   border-top-color: var(--red);
 
-  background: linear-gradient(
-    90deg,
-    rgba(198,40,40,.08),
-    transparent
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(198,40,40,.08),
+      transparent
+    );
 }
 
 .member h3 {
@@ -388,7 +484,10 @@ h2 {
   font-size: 13px;
 }
 
-/* PHOTO AREA */
+
+/* =========================
+   PHOTOS
+========================= */
 
 .photos {
   background: #0e0e0e;
@@ -443,14 +542,10 @@ h2 {
   transform: scale(1.01);
 }
 
-/*
-When you have your photos, replace a photo box with:
 
-<img src="images/band.jpg" alt="Consumed band">
-
-*/
-
-/* SOUND */
+/* =========================
+   SOUND
+========================= */
 
 .sound {
   background:
@@ -491,7 +586,10 @@ When you have your photos, replace a photo box with:
   font-size: 18px;
 }
 
-/* GIGS */
+
+/* =========================
+   GIGS
+========================= */
 
 .gigs {
   display: grid;
@@ -565,7 +663,10 @@ When you have your photos, replace a photo box with:
   color: var(--silver);
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   padding: 45px 0;
@@ -604,23 +705,36 @@ footer a:hover {
   color: white;
 }
 
-/* MOBILE */
 
-@media(max-width:700px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px) {
 
   .header-inner {
-    flex-direction: column;
-
-    align-items: flex-start;
+    flex-wrap: wrap;
 
     padding: 18px 0;
   }
 
   nav {
-    flex-wrap: wrap;
+    order: 3;
 
-    gap: 15px;
+    width: 100%;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
   }
+
+  .socials {
+    margin-left: auto;
+  }
+
+}
+
+@media(max-width:700px) {
 
   .hero-inner {
     padding: 70px 0;
@@ -677,7 +791,9 @@ footer a:hover {
 <body id="top">
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -687,24 +803,63 @@ footer a:hover {
       CONSUMED<span>.</span>
     </a>
 
+
     <nav>
 
-      <a href="#about">Story</a>
+      <a href="#about">
+        Story
+      </a>
 
-      <a href="#band">Band</a>
+      <a href="#band">
+        Band
+      </a>
 
-      <a href="#photos">Photos</a>
+      <a href="#photos">
+        Photos
+      </a>
 
-      <a href="#gigs">Gigs</a>
+      <a href="#gigs">
+        Gigs
+      </a>
 
     </nav>
+
+
+    <!-- SOCIAL MEDIA -->
+
+    <div class="socials">
+
+      <a
+        class="social"
+        href="https://www.instagram.com/consumed25/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Consumed on Instagram"
+      >
+        IG
+      </a>
+
+
+      <a
+        class="social"
+        href="https://www.tiktok.com/@consumed25"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Consumed on TikTok"
+      >
+        TT
+      </a>
+
+    </div>
 
   </div>
 
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -725,11 +880,17 @@ footer a:hover {
 
     <div class="buttons">
 
-      <a class="button" href="#band">
+      <a
+        class="button"
+        href="#band"
+      >
         Meet The Band
       </a>
 
-      <a class="button dark" href="#gigs">
+      <a
+        class="button dark"
+        href="#gigs"
+      >
         Upcoming Gig
       </a>
 
@@ -759,9 +920,14 @@ footer a:hover {
 </div>
 
 
-<!-- STORY -->
+<!-- =========================
+     STORY
+========================= -->
 
-<section class="section" id="about">
+<section
+  class="section"
+  id="about"
+>
 
   <div class="container">
 
@@ -779,6 +945,7 @@ footer a:hover {
         </h2>
 
       </div>
+
 
       <div>
 
@@ -812,9 +979,14 @@ footer a:hover {
 </section>
 
 
-<!-- BAND -->
+<!-- =========================
+     BAND
+========================= -->
 
-<section class="section members" id="band">
+<section
+  class="section members"
+  id="band"
+>
 
   <div class="container">
 
@@ -831,10 +1003,13 @@ footer a:hover {
 
     <div class="member">
 
-      <h3>Eric Gower</h3>
+      <h3>
+        Eric Gower
+      </h3>
 
       <p>
         Guitar
+
         <span class="role">
           Occasional lead vocals · Founding member
         </span>
@@ -845,10 +1020,13 @@ footer a:hover {
 
     <div class="member">
 
-      <h3>Nathan Morgan</h3>
+      <h3>
+        Nathan Morgan
+      </h3>
 
       <p>
         Drums
+
         <span class="role">
           Founding member
         </span>
@@ -859,10 +1037,13 @@ footer a:hover {
 
     <div class="member">
 
-      <h3>Annie Surtees</h3>
+      <h3>
+        Annie Surtees
+      </h3>
 
       <p>
         Bass
+
         <span class="role">
           Occasional vocals · Founding member
         </span>
@@ -873,7 +1054,9 @@ footer a:hover {
 
     <div class="member">
 
-      <h3>Freya</h3>
+      <h3>
+        Freya
+      </h3>
 
       <p>
         Rhythm guitar
@@ -884,7 +1067,9 @@ footer a:hover {
 
     <div class="member">
 
-      <h3>Blosson</h3>
+      <h3>
+        Blosson
+      </h3>
 
       <p>
         Backing vocals
@@ -897,9 +1082,14 @@ footer a:hover {
 </section>
 
 
-<!-- PHOTOS -->
+<!-- =========================
+     PHOTOS
+========================= -->
 
-<section class="section photos" id="photos">
+<section
+  class="section photos"
+  id="photos"
+>
 
   <div class="container">
 
@@ -910,6 +1100,7 @@ footer a:hover {
     <h2>
       The Noise.
     </h2>
+
 
     <div class="photo-grid">
 
@@ -940,7 +1131,9 @@ footer a:hover {
 </section>
 
 
-<!-- SOUND -->
+<!-- =========================
+     SOUND
+========================= -->
 
 <section class="section sound">
 
@@ -955,12 +1148,19 @@ footer a:hover {
         </div>
 
         <div class="big-text">
+
           Loud.<br>
+
           Heavy.<br>
-          <span>Consumed.</span>
+
+          <span>
+            Consumed.
+          </span>
+
         </div>
 
       </div>
+
 
       <div>
 
@@ -985,9 +1185,14 @@ footer a:hover {
 </section>
 
 
-<!-- GIGS -->
+<!-- =========================
+     GIGS
+========================= -->
 
-<section class="section" id="gigs">
+<section
+  class="section"
+  id="gigs"
+>
 
   <div class="container">
 
@@ -1002,8 +1207,6 @@ footer a:hover {
 
     <div class="gigs">
 
-
-      <!-- MUSIC CARD -->
 
       <div class="card">
 
@@ -1023,8 +1226,6 @@ footer a:hover {
 
       </div>
 
-
-      <!-- GIG CARD -->
 
       <div class="card">
 
@@ -1056,13 +1257,18 @@ footer a:hover {
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
   <div class="footer-inner">
 
-    <a href="#top" class="logo">
+    <a
+      href="#top"
+      class="logo"
+    >
       CONSUMED<span>.</span>
     </a>
 
@@ -1078,6 +1284,14 @@ footer a:hover {
       Instagram · @consumed25
     </a>
 
+    <a
+      href="https://www.tiktok.com/@consumed25"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      TikTok · @consumed25
+    </a>
+
     <a href="#top">
       Back to top ↑
     </a>
@@ -1088,3 +1302,4 @@ footer a:hover {
 
 
 </body>
+</html>
