@@ -1,1217 +1,1090 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Consumed — Rock & Metal</title>
-
-  <meta
-    name="description"
-    content="Consumed — an up-and-coming rock and metal band from Essex."
-  >
-
-  <link
-    rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23121212'/%3E%3Ctext x='7' y='25' font-family='Arial' font-weight='900' font-size='26' fill='%23C62828'%3EC%3C/text%3E%3C/svg%3E"
-  >
-
-  <style>
-
-    :root {
-      --black: #0b0b0b;
-      --dark: #121212;
-      --grey: #202020;
-      --light-grey: #2b2b2b;
-      --white: #f2ede4;
-      --silver: #a8a8a8;
-      --red: #c62828;
-      --bright-red: #e53935;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--black);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body::selection {
-      background: var(--red);
-      color: white;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .wrap {
-      width: min(1240px, 88%);
-      margin: auto;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10, 10, 10, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #ffffff18;
-    }
-
-    header .wrap {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .brand {
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      text-decoration: none;
-    }
-
-    .brand span {
-      color: var(--red);
-    }
-
-    nav {
-      display: flex;
-      gap: 30px;
-    }
-
-    nav a {
-      color: var(--silver);
-      text-decoration: none;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: .25s;
-    }
-
-    nav a:hover {
-      color: white;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: calc(100svh - 78px);
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid #ffffff18;
-      background:
-        radial-gradient(
-          circle at 80% 45%,
-          #c6282838,
-          transparent 35%
-        ),
-        radial-gradient(
-          circle at 20% 80%,
-          #ffffff08,
-          transparent 30%
-        );
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: var(--red);
-      filter: blur(180px);
-      opacity: .13;
-      right: -180px;
-      top: 20%;
-      animation: pulse 5s infinite alternate;
-    }
-
-    @keyframes pulse {
-      from {
-        transform: scale(.8);
-        opacity: .08;
-      }
-
-      to {
-        transform: scale(1.2);
-        opacity: .18;
-      }
-    }
-
-    .hero .wrap {
-      position: relative;
-      z-index: 2;
-      padding: 100px 0;
-    }
-
-    .eyebrow {
-      color: var(--silver);
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      display: inline-block;
-      width: 35px;
-      height: 3px;
-      background: var(--red);
-      margin-right: 14px;
-      vertical-align: middle;
-    }
-
-    h1 {
-      font-family: Impact, "Arial Narrow", sans-serif;
-      font-size: clamp(75px, 15vw, 190px);
-      line-height: .9;
-      letter-spacing: -.04em;
-      margin: 0;
-      transform: skew(-5deg);
-      text-shadow: 8px 8px 0 #000;
-    }
-
-    h1 span {
-      color: var(--red);
-    }
-
-    .hero-text {
-      max-width: 560px;
-      color: var(--silver);
-      font-size: 20px;
-      margin-top: 35px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 35px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 15px 26px;
-      background: var(--red);
-      border: 1px solid var(--red);
-      color: white;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 13px;
-      font-weight: bold;
-      transition: .25s;
-    }
-
-    .button:hover {
-      background: var(--bright-red);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px #c6282845;
-    }
-
-    .button.secondary {
-      background: transparent;
-      border-color: #ffffff45;
-    }
-
-    .button.secondary:hover {
-      background: #ffffff0c;
-      border-color: white;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 50px;
-      margin-top: 70px;
-      flex-wrap: wrap;
-    }
-
-    .hero-stat strong {
-      display: block;
-      font-size: 25px;
-      color: white;
-    }
-
-    .hero-stat span {
-      color: var(--silver);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* =========================
-       RED STRIP
-    ========================= */
-
-    .strip {
-      background: var(--red);
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 16px 0;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    .strip span {
-      margin: 0 18px;
-    }
-
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
-
-    .section {
-      padding: 110px 0;
-      border-bottom: 1px solid #ffffff18;
-    }
-
-    .number {
-      color: var(--red);
-      font-size: 13px;
-      letter-spacing: 3px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-family: Impact, "Arial Narrow", sans-serif;
-      font-size: clamp(48px, 7vw, 82px);
-      text-transform: uppercase;
-      line-height: .95;
-      margin: 0;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 30px;
-      margin-bottom: 50px;
-    }
-
-    .label {
-      color: var(--silver);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 11px;
-    }
-
-    /* =========================
-       STORY
-    ========================= */
-
-    .story {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-    }
-
-    .story .lead {
-      color: white;
-      font-size: 25px;
-      line-height: 1.5;
-      margin-top: 0;
-    }
-
-    .story p {
-      color: var(--silver);
-    }
-
-    .founders {
-      margin-top: 30px;
-      padding: 20px;
-      border-left: 3px solid var(--red);
-      background: #ffffff05;
-      color: var(--silver);
-    }
-
-    /* =========================
-       BAND MEMBERS
-    ========================= */
-
-    .members {
-      background: #111;
-    }
-
-    .member {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 30px 0;
-      border-top: 1px solid #ffffff18;
-      transition: .25s;
-    }
-
-    .member:hover {
-      padding-left: 15px;
-      border-top-color: var(--red);
-      background: linear-gradient(
-        90deg,
-        #c6282810,
-        transparent
-      );
-    }
-
-    .member:last-child {
-      border-bottom: 1px solid #ffffff18;
-    }
-
-    .member h3 {
-      margin: 0;
-      font-size: 27px;
-    }
-
-    .member p {
-      margin: 0;
-      color: var(--silver);
-    }
-
-    .role-small {
-      display: block;
-      font-size: 13px;
-      margin-top: 4px;
-      color: #777;
-    }
-
-    /* =========================
-       PHOTO GALLERY
-    ========================= */
-
-    .gallery {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      grid-auto-rows: 260px;
-      gap: 15px;
-    }
-
-    .photo {
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(
-          135deg,
-          #2b2b2b,
-          #111
-        );
-      border: 1px solid #ffffff15;
-    }
-
-    .photo:first-child {
-      grid-row: span 2;
-    }
-
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: .5s;
-    }
-
-    .photo:hover img {
-      transform: scale(1.08);
-    }
-
-    .photo::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        transparent 45%,
-        #000000aa
-      );
-      pointer-events: none;
-    }
-
-    .photo-placeholder {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    /* =========================
-       MUSIC / GIGS
-    ========================= */
-
-    .updates {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    .update {
-      position: relative;
-      background: var(--grey);
-      padding: 42px;
-      border-top: 3px solid var(--red);
-      overflow: hidden;
-      transition: .3s;
-    }
-
-    .update:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px #00000055;
-    }
-
-    .update::after {
-      content: "CONSUMED";
-      position: absolute;
-      right: -35px;
-      bottom: -20px;
-      font-family: Impact, sans-serif;
-      font-size: 80px;
-      color: #ffffff05;
-      transform: rotate(-8deg);
-    }
-
-    .update h3 {
-      font-family: Impact, sans-serif;
-      font-size: 40px;
-      text-transform: uppercase;
-      line-height: 1;
-      margin: 20px 0 15px;
-    }
-
-    .update p {
-      color: var(--silver);
-    }
-
-    .gig-date {
-      color: var(--red);
-      font-family: Impact, sans-serif;
-      font-size: clamp(42px, 6vw, 65px);
-      line-height: 1;
-      margin: 25px 0 10px;
-      text-transform: uppercase;
-    }
-
-    .gig-venue {
-      color: white !important;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    /* =========================
-       SOUND SECTION
-    ========================= */
-
-    .sound {
-      background:
-        linear-gradient(
-          135deg,
-          #170909,
-          #101010
-        );
-    }
-
-    .sound-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .sound-big {
-      font-family: Impact, sans-serif;
-      font-size: clamp(50px, 7vw, 90px);
-      line-height: .95;
-      text-transform: uppercase;
-    }
-
-    .sound-big span {
-      color: var(--red);
-    }
-
-    .sound-text {
-      color: var(--silver);
-      font-size: 18px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      padding: 50px 0;
-    }
-
-    footer .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    footer p,
-    footer a {
-      color: var(--silver);
-      font-size: 13px;
-    }
-
-    footer a {
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    /* =========================
-       ANIMATIONS
-    ========================= */
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero .eyebrow,
-    .hero h1,
-    .hero-text,
-    .hero .actions,
-    .hero-stats {
-      animation: fadeUp .8s ease both;
-    }
-
-    .hero h1 {
-      animation-delay: .1s;
-    }
-
-    .hero-text {
-      animation-delay: .2s;
-    }
-
-    .hero .actions {
-      animation-delay: .3s;
-    }
-
-    .hero-stats {
-      animation-delay: .4s;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 700px) {
-
-      header .wrap {
-        min-height: auto;
-        padding: 18px 0;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        width: 100%;
-        gap: 18px;
-        flex-wrap: wrap;
-      }
-
-      nav a {
-        font-size: 11px;
-      }
-
-      .hero .wrap {
-        padding: 75px 0;
-      }
-
-      h1 {
-        font-size: 78px;
-      }
-
-      .hero-text {
-        font-size: 18px;
-      }
-
-      .hero-stats {
-        gap: 25px;
-        margin-top: 50px;
-      }
-
-      .section {
-        padding: 75px 0;
-      }
-
-      .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .story {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .story .lead {
-        font-size: 21px;
-      }
-
-      .member {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 190px;
-      }
-
-      .photo:first-child {
-        grid-row: span 1;
-        grid-column: span 2;
-      }
-
-      .updates {
-        grid-template-columns: 1fr;
-      }
-
-      .update {
-        padding: 30px;
-      }
-
-      .sound-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      footer .wrap {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Consumed — Rock & Metal</title>
+
+<style>
+
+:root {
+  --black: #0b0b0b;
+  --dark: #151515;
+  --grey: #242424;
+  --red: #c62828;
+  --red2: #ef3333;
+  --white: #f2ede4;
+  --silver: #aaa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,10,.95);
+  border-bottom: 1px solid #ffffff20;
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  min-height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--silver);
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* HERO */
+
+.hero {
+  min-height: calc(100vh - 75px);
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(198,40,40,.25),
+      transparent 40%
+    );
+}
+
+.hero:before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: var(--red);
+
+  border-radius: 50%;
+
+  filter: blur(180px);
+
+  opacity: .12;
+
+  right: -200px;
+  top: 20%;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+
+  padding: 100px 0;
+
+  position: relative;
+  z-index: 2;
+}
+
+.small-title {
+  color: var(--silver);
+
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  font-size: 13px;
+
+  margin-bottom: 25px;
+}
+
+.small-title:before {
+  content: "";
+
+  display: inline-block;
+
+  width: 30px;
+  height: 3px;
+
+  background: var(--red);
+
+  margin-right: 12px;
+
+  vertical-align: middle;
+}
+
+h1 {
+  font-family: Impact, "Arial Narrow", sans-serif;
+
+  font-size: clamp(70px, 15vw, 180px);
+
+  line-height: .9;
+
+  margin: 0;
+
+  transform: skew(-4deg);
+
+  text-shadow: 8px 8px 0 #000;
+}
+
+h1 span {
+  color: var(--red);
+}
+
+.hero-text {
+  max-width: 550px;
+
+  color: var(--silver);
+
+  font-size: 20px;
+
+  margin-top: 35px;
+}
+
+.buttons {
+  display: flex;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+  margin-top: 35px;
+}
+
+.button {
+  display: inline-block;
+
+  padding: 15px 25px;
+
+  background: var(--red);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  border: 1px solid var(--red);
+
+  transition: .25s;
+}
+
+.button:hover {
+  background: var(--red2);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 30px rgba(198,40,40,.3);
+}
+
+.button.dark {
+  background: transparent;
+
+  border-color: #ffffff40;
+}
+
+/* STRIP */
+
+.strip {
+  background: var(--red);
+
+  color: white;
+
+  text-align: center;
+
+  padding: 15px;
+
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  letter-spacing: 4px;
+
+  font-size: 13px;
+}
+
+.strip span {
+  margin: 0 15px;
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 100px 0;
+
+  border-bottom: 1px solid #ffffff18;
+}
+
+.container {
+  max-width: 1200px;
+
+  width: 90%;
+
+  margin: auto;
+}
+
+.number {
+  color: var(--red);
+
+  font-size: 13px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  font-weight: bold;
+
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: Impact, "Arial Narrow", sans-serif;
+
+  font-size: clamp(45px, 7vw, 80px);
+
+  line-height: .95;
+
+  text-transform: uppercase;
+
+  margin: 0;
+}
+
+/* STORY */
+
+.story {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+}
+
+.story-lead {
+  color: white;
+
+  font-size: 24px;
+}
+
+.story p {
+  color: var(--silver);
+}
+
+.founders {
+  border-left: 3px solid var(--red);
+
+  padding: 15px 20px;
+
+  margin-top: 25px;
+
+  color: var(--silver);
+
+  background: #ffffff05;
+}
+
+/* BAND */
+
+.members {
+  background: #111;
+}
+
+.member {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  padding: 28px 0;
+
+  border-top: 1px solid #ffffff18;
+
+  transition: .25s;
+}
+
+.member:last-child {
+  border-bottom: 1px solid #ffffff18;
+}
+
+.member:hover {
+  padding-left: 15px;
+
+  border-top-color: var(--red);
+
+  background: linear-gradient(
+    90deg,
+    rgba(198,40,40,.08),
+    transparent
+  );
+}
+
+.member h3 {
+  margin: 0;
+
+  font-size: 25px;
+}
+
+.member p {
+  margin: 0;
+
+  color: var(--silver);
+}
+
+.role {
+  display: block;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+/* PHOTO AREA */
+
+.photos {
+  background: #0e0e0e;
+}
+
+.photo-grid {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr;
+
+  grid-template-rows: 220px 220px;
+
+  gap: 15px;
+
+  margin-top: 45px;
+}
+
+.photo {
+  background:
+    linear-gradient(
+      135deg,
+      #292929,
+      #101010
+    );
+
+  border: 1px solid #ffffff15;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #666;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  overflow: hidden;
+
+  transition: .3s;
+}
+
+.photo:first-child {
+  grid-row: span 2;
+}
+
+.photo:hover {
+  border-color: var(--red);
+
+  transform: scale(1.01);
+}
+
+/*
+When you have your photos, replace a photo box with:
+
+<img src="images/band.jpg" alt="Consumed band">
+
+*/
+
+/* SOUND */
+
+.sound {
+  background:
+    linear-gradient(
+      135deg,
+      #190707,
+      #111
+    );
+}
+
+.sound-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.big-text {
+  font-family: Impact, sans-serif;
+
+  font-size: clamp(50px, 7vw, 90px);
+
+  line-height: .9;
+
+  text-transform: uppercase;
+}
+
+.big-text span {
+  color: var(--red);
+}
+
+.sound p {
+  color: var(--silver);
+
+  font-size: 18px;
+}
+
+/* GIGS */
+
+.gigs {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+
+  margin-top: 45px;
+}
+
+.card {
+  background: var(--grey);
+
+  padding: 40px;
+
+  border-top: 3px solid var(--red);
+
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 20px 40px #00000070;
+}
+
+.card-label {
+  color: var(--silver);
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+.card h3 {
+  font-family: Impact, sans-serif;
+
+  font-size: 38px;
+
+  line-height: 1.05;
+
+  margin: 20px 0;
+}
+
+.gig-date {
+  color: var(--red);
+
+  font-family: Impact, sans-serif;
+
+  font-size: clamp(42px, 6vw, 65px);
+
+  line-height: 1;
+
+  margin-top: 20px;
+}
+
+.venue {
+  color: white;
+
+  font-size: 25px;
+
+  font-weight: bold;
+
+  margin-top: 10px;
+}
+
+.card p {
+  color: var(--silver);
+}
+
+/* FOOTER */
+
+footer {
+  padding: 45px 0;
+}
+
+.footer-inner {
+  max-width: 1200px;
+
+  width: 90%;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+footer p,
+footer a {
+  color: var(--silver);
+
+  font-size: 13px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+  .header-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 18px 0;
+  }
+
+  nav {
+    flex-wrap: wrap;
+
+    gap: 15px;
+  }
+
+  .hero-inner {
+    padding: 70px 0;
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  .story,
+  .sound-grid,
+  .gigs {
+    grid-template-columns: 1fr;
+  }
+
+  .member {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: 180px 180px 180px;
+  }
+
+  .photo:first-child {
+    grid-column: span 2;
+
+    grid-row: span 1;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .card {
+    padding: 28px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+</style>
 </head>
+
 
 <body id="top">
 
-  <!-- HEADER -->
 
-  <header>
-    <div class="wrap">
+<!-- HEADER -->
 
-      <a class="brand" href="#top">
-        CONSUMED<span>.</span>
+<header>
+
+  <div class="header-inner">
+
+    <a href="#top" class="logo">
+      CONSUMED<span>.</span>
+    </a>
+
+    <nav>
+
+      <a href="#about">Story</a>
+
+      <a href="#band">Band</a>
+
+      <a href="#photos">Photos</a>
+
+      <a href="#gigs">Gigs</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="small-title">
+      Rock / Metal · Essex · Est. 2025–2026
+    </div>
+
+    <h1>
+      CONSUMED<span>.</span>
+    </h1>
+
+    <p class="hero-text">
+      Five young artists. A shared love of rock and metal.
+      This is only the beginning.
+    </p>
+
+    <div class="buttons">
+
+      <a class="button" href="#band">
+        Meet The Band
       </a>
 
-      <nav aria-label="Main navigation">
-        <a href="#about">Our Story</a>
-        <a href="#band">The Band</a>
-        <a href="#gallery">Photos</a>
-        <a href="#music">Gigs</a>
-      </nav>
-
-    </div>
-  </header>
-
-
-  <main>
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-      <div class="wrap">
-
-        <p class="eyebrow">
-          Rock / Metal · Essex · Est. 2025–2026
-        </p>
-
-        <h1>
-          CONSUMED<span>.</span>
-        </h1>
-
-        <p class="hero-text">
-          Five young artists. One shared obsession.
-          Loud guitars, heavy drums and a whole lot more
-          to come.
-        </p>
-
-        <div class="actions">
-
-          <a class="button" href="#band">
-            Meet The Band
-          </a>
-
-          <a class="button secondary" href="#music">
-            Upcoming Gig
-          </a>
-
-        </div>
-
-        <div class="hero-stats">
-
-          <div class="hero-stat">
-            <strong>5</strong>
-            <span>Members</span>
-          </div>
-
-          <div class="hero-stat">
-            <strong>Rock</strong>
-            <span>Our Sound</span>
-          </div>
-
-          <div class="hero-stat">
-            <strong>2027</strong>
-            <span>First Gig</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- STRIP -->
-
-    <div class="strip">
-
-      <span>Guitar</span>
-      /
-      <span>Bass</span>
-      /
-      <span>Drums</span>
-      /
-      <span>Vocals</span>
-      /
-      <span>Rock</span>
-      /
-      <span>Metal</span>
+      <a class="button dark" href="#gigs">
+        Upcoming Gig
+      </a>
 
     </div>
 
+  </div>
 
-    <!-- STORY -->
+</section>
 
-    <section class="section" id="about">
 
-      <div class="wrap story">
+<!-- STRIP -->
 
-        <div>
+<div class="strip">
 
-          <p class="number">
-            01 / Our Story
-          </p>
+  <span>Guitar</span>
+  /
+  <span>Bass</span>
+  /
+  <span>Drums</span>
+  /
+  <span>Vocals</span>
+  /
+  <span>Rock</span>
+  /
+  <span>Metal</span>
 
-          <h2>
-            A New Band.<br>
-            A Loud Beginning.
-          </h2>
+</div>
 
+
+<!-- STORY -->
+
+<section class="section" id="about">
+
+  <div class="container">
+
+    <div class="story">
+
+      <div>
+
+        <div class="number">
+          01 / Our Story
         </div>
 
-        <div>
+        <h2>
+          A New Band.<br>
+          A Loud Beginning.
+        </h2>
 
-          <p class="lead">
-            Consumed began with Eric, Annie and Nathan —
-            and a shared drive to make music together.
-          </p>
+      </div>
 
-          <p>
-            Founded in 2025–2026, the band brings together
-            five young, up-and-coming artists finding their
-            voice in rock and metal.
-          </p>
+      <div>
 
-          <p>
-            With guitars, bass, drums and shared vocals,
-            Consumed are building something of their own.
-          </p>
+        <p class="story-lead">
+          Consumed began with Eric, Annie and Nathan —
+          and a shared drive to make music together.
+        </p>
 
-          <div class="founders">
-            Founded by Eric Gower, Annie Surtees
-            &amp; Nathan Morgan.
-          </div>
+        <p>
+          Founded in 2025–2026, the band brings together
+          five young, up-and-coming artists finding their
+          voice in rock and metal.
+        </p>
 
+        <p>
+          With guitars, bass, drums and shared vocals,
+          they are building something of their own.
+        </p>
+
+        <div class="founders">
+          Founded by Eric Gower, Annie Surtees
+          &amp; Nathan Morgan.
         </div>
 
       </div>
 
-    </section>
+    </div>
 
+  </div>
 
-    <!-- BAND -->
+</section>
 
-    <section class="section members" id="band">
 
-      <div class="wrap">
+<!-- BAND -->
 
-        <div class="section-heading">
+<section class="section members" id="band">
 
-          <div>
+  <div class="container">
 
-            <p class="number">
-              02 / The Line-Up
-            </p>
+    <div class="number">
+      02 / The Line-Up
+    </div>
 
-            <h2>
-              Meet Consumed.
-            </h2>
+    <h2>
+      Meet Consumed.
+    </h2>
 
-          </div>
+    <br>
 
-          <span class="label">
-            Five artists. One band.
-          </span>
 
-        </div>
+    <div class="member">
 
-
-        <div class="member">
-
-          <h3>
-            Eric Gower
-          </h3>
-
-          <p>
-            Guitar
-            <span class="role-small">
-              Occasional lead vocals · Founding member
-            </span>
-          </p>
-
-        </div>
-
-
-        <div class="member">
-
-          <h3>
-            Nathan Morgan
-          </h3>
-
-          <p>
-            Drums
-            <span class="role-small">
-              Founding member
-            </span>
-          </p>
-
-        </div>
-
-
-        <div class="member">
-
-          <h3>
-            Annie Surtees
-          </h3>
-
-          <p>
-            Bass
-            <span class="role-small">
-              Occasional vocals · Founding member
-            </span>
-          </p>
-
-        </div>
-
-
-        <div class="member">
-
-          <h3>
-            Freya
-          </h3>
-
-          <p>
-            Rhythm guitar
-          </p>
-
-        </div>
-
-
-        <div class="member">
-
-          <h3>
-            Blosson
-          </h3>
-
-          <p>
-            Backing vocals
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PHOTOS -->
-
-    <section class="section" id="gallery">
-
-      <div class="wrap">
-
-        <div class="section-heading">
-
-          <div>
-
-            <p class="number">
-              03 / The Gallery
-            </p>
-
-            <h2>
-              The Noise.
-            </h2>
-
-          </div>
-
-          <span class="label">
-            Photos coming soon
-          </span>
-
-        </div>
-
-
-        <div class="gallery">
-
-          <!-- Replace these placeholders with your photos later -->
-
-          <div class="photo">
-            <div class="photo-placeholder">
-              Band Photo
-            </div>
-          </div>
-
-          <div class="photo">
-            <div class="photo-placeholder">
-              Live Photo
-            </div>
-          </div>
-
-          <div class="photo">
-            <div class="photo-placeholder">
-              Guitar
-            </div>
-          </div>
-
-          <div class="photo">
-            <div class="photo-placeholder">
-              Drums
-            </div>
-          </div>
-
-          <div class="photo">
-            <div class="photo-placeholder">
-              Band
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- SOUND -->
-
-    <section class="section sound">
-
-      <div class="wrap sound-content">
-
-        <div>
-
-          <p class="number">
-            04 / The Sound
-          </p>
-
-          <div class="sound-big">
-            Loud.<br>
-            Heavy.<br>
-            <span>Consumed.</span>
-          </div>
-
-        </div>
-
-        <div>
-
-          <p class="sound-text">
-            Five musicians. Guitars turned up.
-            Drums hitting hard. Voices cutting through
-            the noise.
-          </p>
-
-          <p class="sound-text">
-            We're still finding our sound — and that's
-            exactly what makes this the beginning.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- MUSIC / GIGS -->
-
-    <section class="section" id="music">
-
-      <div class="wrap">
-
-        <div class="section-heading">
-
-          <div>
-
-            <p class="number">
-              05 / Music &amp; Gigs
-            </p>
-
-            <h2>
-              What's Next?
-            </h2>
-
-          </div>
-
-        </div>
-
-
-        <div class="updates">
-
-
-          <!-- MUSIC -->
-
-          <article class="update">
-
-            <span class="label">
-              Music / Coming Soon
-            </span>
-
-            <h3>
-              The next chapter
-              starts here.
-            </h3>
-
-            <p>
-              Recordings will appear here when they're
-              ready. Stay tuned for music from Consumed.
-            </p>
-
-          </article>
-
-
-          <!-- GIG -->
-
-          <article class="update">
-
-            <span class="label">
-              Live / Upcoming Gig
-            </span>
-
-            <div class="gig-date">
-              30 October 2027
-            </div>
-
-            <p class="gig-venue">
-              The Fickle Pickle Club
-            </p>
-
-            <p>
-              Come and see Consumed live.
-              More details will be announced closer
-              to the date.
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="wrap">
-
-      <a class="brand" href="#top">
-        CONSUMED<span>.</span>
-      </a>
+      <h3>Eric Gower</h3>
 
       <p>
-        Upcoming band based in Essex.
+        Guitar
+        <span class="role">
+          Occasional lead vocals · Founding member
+        </span>
       </p>
-
-      <a
-        href="https://www.instagram.com/consumed25/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Instagram · @consumed25
-      </a>
-
-      <a href="#top">
-        Back to top ↑
-      </a>
 
     </div>
 
-  </footer>
+
+    <div class="member">
+
+      <h3>Nathan Morgan</h3>
+
+      <p>
+        Drums
+        <span class="role">
+          Founding member
+        </span>
+      </p>
+
+    </div>
+
+
+    <div class="member">
+
+      <h3>Annie Surtees</h3>
+
+      <p>
+        Bass
+        <span class="role">
+          Occasional vocals · Founding member
+        </span>
+      </p>
+
+    </div>
+
+
+    <div class="member">
+
+      <h3>Freya</h3>
+
+      <p>
+        Rhythm guitar
+      </p>
+
+    </div>
+
+
+    <div class="member">
+
+      <h3>Blosson</h3>
+
+      <p>
+        Backing vocals
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PHOTOS -->
+
+<section class="section photos" id="photos">
+
+  <div class="container">
+
+    <div class="number">
+      03 / Photos
+    </div>
+
+    <h2>
+      The Noise.
+    </h2>
+
+    <div class="photo-grid">
+
+      <div class="photo">
+        Band Photo
+      </div>
+
+      <div class="photo">
+        Live Photo
+      </div>
+
+      <div class="photo">
+        Guitar
+      </div>
+
+      <div class="photo">
+        Drums
+      </div>
+
+      <div class="photo">
+        Consumed
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SOUND -->
+
+<section class="section sound">
+
+  <div class="container">
+
+    <div class="sound-grid">
+
+      <div>
+
+        <div class="number">
+          04 / The Sound
+        </div>
+
+        <div class="big-text">
+          Loud.<br>
+          Heavy.<br>
+          <span>Consumed.</span>
+        </div>
+
+      </div>
+
+      <div>
+
+        <p>
+          Five musicians. Guitars turned up.
+          Drums hitting hard. Voices cutting
+          through the noise.
+        </p>
+
+        <p>
+          We're still finding our sound —
+          and that's exactly what makes this
+          the beginning.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GIGS -->
+
+<section class="section" id="gigs">
+
+  <div class="container">
+
+    <div class="number">
+      05 / Music &amp; Gigs
+    </div>
+
+    <h2>
+      What's Next?
+    </h2>
+
+
+    <div class="gigs">
+
+
+      <!-- MUSIC CARD -->
+
+      <div class="card">
+
+        <div class="card-label">
+          Music / Coming Soon
+        </div>
+
+        <h3>
+          The Next Chapter
+          Starts Here.
+        </h3>
+
+        <p>
+          Recordings will appear here when
+          they are ready.
+        </p>
+
+      </div>
+
+
+      <!-- GIG CARD -->
+
+      <div class="card">
+
+        <div class="card-label">
+          Live / Upcoming Gig
+        </div>
+
+        <div class="gig-date">
+          30 OCTOBER 2027
+        </div>
+
+        <div class="venue">
+          The Fickle Pickle Club
+        </div>
+
+        <p>
+          Come and see Consumed live.
+          More details will be announced
+          closer to the date.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <a href="#top" class="logo">
+      CONSUMED<span>.</span>
+    </a>
+
+    <p>
+      Upcoming band based in Essex.
+    </p>
+
+    <a
+      href="https://www.instagram.com/consumed25/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Instagram · @consumed25
+    </a>
+
+    <a href="#top">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
 
 </body>
-</html>
