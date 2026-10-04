@@ -900,7 +900,9 @@ h2 {
 }
 
 
-/* UPCOMING GIG CARD */
+/* =========================
+   UPCOMING GIG
+========================= */
 
 .card:last-child {
   background:
@@ -916,6 +918,62 @@ h2 {
 
 .card:last-child .card-label {
   color: #ff7777;
+}
+
+
+/* =========================
+   TICKET BUTTON
+========================= */
+
+.ticket-button {
+  display: inline-block;
+
+  margin-top: 12px;
+
+  padding: 15px 27px;
+
+  background: var(--red);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+
+  border: 1px solid var(--red);
+
+  clip-path:
+    polygon(
+      0 0,
+      calc(100% - 8px) 0,
+      100% 8px,
+      100% 100%,
+      8px 100%,
+      0 calc(100% - 8px)
+    );
+
+  transition: .25s;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.ticket-button:hover {
+  background: var(--red2);
+
+  transform:
+    translateY(-4px)
+    scale(1.02);
+
+  box-shadow:
+    0 12px 35px rgba(198,40,40,.45);
 }
 
 
@@ -1337,6 +1395,7 @@ footer a:hover {
 
     </div>
 
+
     <div class="member">
 
       <h3>
@@ -1352,6 +1411,7 @@ footer a:hover {
       </p>
 
     </div>
+
 
     <div class="member">
 
@@ -1369,6 +1429,7 @@ footer a:hover {
 
     </div>
 
+
     <div class="member">
 
       <h3>
@@ -1380,6 +1441,7 @@ footer a:hover {
       </p>
 
     </div>
+
 
     <div class="member">
 
@@ -1476,6 +1538,7 @@ footer a:hover {
 
       </div>
 
+
       <div>
 
         <p>
@@ -1518,7 +1581,11 @@ footer a:hover {
       What's Next?
     </h2>
 
+
     <div class="gigs">
+
+
+      <!-- MUSIC -->
 
       <div class="card">
 
@@ -1538,6 +1605,8 @@ footer a:hover {
 
       </div>
 
+
+      <!-- UPCOMING GIG -->
 
       <div class="card">
 
@@ -1559,7 +1628,17 @@ footer a:hover {
           closer to the date.
         </p>
 
+        <a
+          class="ticket-button"
+          href="https://www.ficklepickleclub.com/event/substrate-2026-10-30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🎟️ Get Tickets
+        </a>
+
       </div>
+
 
     </div>
 
